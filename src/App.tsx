@@ -208,9 +208,9 @@ export default function App() {
             className="w-full rounded-2xl flex flex-col items-center justify-center mb-8 overflow-hidden"
           ></div>
           
-          <button className="w-full bg-green-500 text-black font-bold text-lg py-4 rounded-xl transition hover:bg-green-600">
+          <a href="https://wa.me/5521920276257" className="w-full bg-green-500 text-black font-bold text-lg py-4 rounded-xl transition hover:bg-green-600 block text-center">
             Falar comigo no WhatsApp
-          </button>
+          </a>
         </div>
       </div>
     );
