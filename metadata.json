@@ -1,0 +1,6 @@
+{
+  "name": "Mercado Livre Diagnosis",
+  "description": "Landing page to diagnose Mercado Livre journey.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
