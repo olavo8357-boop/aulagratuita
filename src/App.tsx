@@ -7,7 +7,18 @@ import { useState, useRef, useEffect } from 'react';
 
 export default function App() {
   const [currentStep, setCurrentStep] = useState(0); // 0: landing, 1: Q1, 2: Q2
+  const [showButton, setShowButton] = useState(false);
   const playerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (currentStep === 5) {
+      setShowButton(false);
+      const timer = setTimeout(() => {
+        setShowButton(true);
+      }, 367 * 1000); // 6 minutes and 7 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [currentStep]);
 
   useEffect(() => {
     // Only attempt to inject if current step is 5 and the element exists
@@ -208,9 +219,11 @@ export default function App() {
             className="w-full rounded-2xl flex flex-col items-center justify-center mb-8 overflow-hidden"
           ></div>
           
-          <a href="https://wa.me/5521920276257" className="w-full bg-green-500 text-black font-bold text-lg py-4 rounded-xl transition hover:bg-green-600 block text-center">
-            Falar comigo no WhatsApp
-          </a>
+          {showButton && (
+            <a href="https://wa.me/5521920276257?text=Olá,%20tenho%20interesse%20em%20participar%20do%20projeto%20pra%20vender%20no%20mercado%20livre%20sem%20estoque" className="w-full bg-green-500 text-black font-bold text-lg py-4 rounded-xl transition hover:bg-green-600 block text-center">
+              Falar comigo no WhatsApp
+            </a>
+          )}
         </div>
       </div>
     );
